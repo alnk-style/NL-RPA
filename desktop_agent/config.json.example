@@ -1,0 +1,13 @@
+{
+  "server_url": "ws://localhost:8000",
+  "agent_id": 1,
+  "token": "your-token-here",
+  "environment": "local",
+  "capabilities": ["interactive_desktop"],
+  "human_access_url": null,
+  "human_access_instructions": null,
+  "allowed_apps": [],
+  "allowed_doc_dirs": [],
+  "log_dir": "logs",
+  "heartbeat_interval": 30
+}

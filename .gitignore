@@ -1,0 +1,45 @@
+# Local secrets and credentials
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+*.p12
+*.pfx
+*.jks
+*.keystore
+
+# Python environments and caches
+.venv/
+venv/
+Python/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.ruff_cache/
+
+# Runtime data and local artifacts
+logs/*
+!logs/.gitkeep
+.tmp/
+rpa.db
+*.db
+*.sqlite
+*.sqlite3
+*.sqlite3-*
+*.bak
+*.zip
+
+# Package manager caches
+.pnpm-store/
+
+# Frontend and desktop build output
+frontend/node_modules/
+frontend/dist/
+frontend/.pnpm-store/
+desktop/node_modules/
+desktop/dist/
+desktop/src-tauri/target/
+desktop/src-tauri/binaries/*.exe
+build/
+*.spec

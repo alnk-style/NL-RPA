@@ -1,0 +1,40 @@
+schema_version: 1
+id: __APP_ID__
+name: __APP_NAME__
+version: "0.1.0"
+description: Generated App MCP adapter package.
+platform: cross_platform
+backend_priority:
+  - api
+  - cli
+entrypoint: "adapter:ExampleAppAdapter"
+config: {}
+local:
+  host_mode: subprocess
+  default_port: 8790
+  auto_start: false
+  startup_timeout_seconds: 15
+  health_interval_seconds: 10
+tools:
+  - name: example_status
+    description: Return the current application status.
+    input_schema:
+      type: object
+      properties: {}
+      additionalProperties: false
+    risk_level: read_only
+    output_description: Application availability and runtime information.
+  - name: example_write
+    description: Perform one application-specific mutating operation.
+    input_schema:
+      type: object
+      properties:
+        value:
+          type: string
+          minLength: 1
+          maxLength: 2000
+      required:
+        - value
+      additionalProperties: false
+    risk_level: mutating
+    output_description: Structured result for the requested write operation.

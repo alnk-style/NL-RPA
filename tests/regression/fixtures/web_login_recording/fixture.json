@@ -1,0 +1,42 @@
+{
+  "name": "web_login_recording",
+  "description": "网页登录录制草稿：导航、两次输入、点击登录",
+  "recording": {
+    "mode": "web",
+    "events": [
+      {
+        "kind": "navigate",
+        "url": "https://example.com/login"
+      },
+      {
+        "kind": "fill",
+        "locators": [{"strategy": "label", "value": "用户名"}],
+        "value": "alice"
+      },
+      {
+        "kind": "fill",
+        "locators": [{"strategy": "label", "value": "密码"}],
+        "value": "secret"
+      },
+      {
+        "kind": "click",
+        "locators": [
+          {"strategy": "role", "value": "button", "name": "登录"},
+          {"strategy": "css", "value": "#login"}
+        ]
+      }
+    ],
+    "expected_steps": [
+      {"action": "goto", "executor": "web"},
+      {"action": "fill", "executor": "web"},
+      {"action": "fill", "executor": "web"},
+      {"action": "click", "executor": "web"}
+    ],
+    "expected_idempotency_keys": [
+      "rec-01-goto-609fb4df",
+      "rec-02-fill-ccf633c9",
+      "rec-03-fill-75d515ae",
+      "rec-04-click-519ca715"
+    ]
+  }
+}

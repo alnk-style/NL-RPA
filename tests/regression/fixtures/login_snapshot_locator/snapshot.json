@@ -1,0 +1,50 @@
+{
+  "kind": "browser",
+  "url": "https://example.com/login",
+  "title": "登录",
+  "elements": [
+    {
+      "tag": "input",
+      "role": "textbox",
+      "name": "用户名",
+      "text": "",
+      "value": "",
+      "placeholder": "请输入用户名",
+      "id": "username",
+      "test_id": "username-input",
+      "visible": true,
+      "enabled": true,
+      "locators": [
+        {"strategy": "label", "value": "用户名", "count": 1, "score": 100}
+      ]
+    },
+    {
+      "tag": "input",
+      "role": "textbox",
+      "name": "密码",
+      "text": "",
+      "value": "",
+      "placeholder": "请输入密码",
+      "id": "password",
+      "test_id": "password-input",
+      "visible": true,
+      "enabled": true,
+      "locators": [
+        {"strategy": "label", "value": "密码", "count": 1, "score": 100}
+      ]
+    },
+    {
+      "tag": "button",
+      "role": "button",
+      "name": "登录",
+      "text": "登录",
+      "id": "login",
+      "test_id": "login-button",
+      "visible": true,
+      "enabled": true,
+      "locators": [
+        {"strategy": "role", "value": "button", "name": "登录", "count": 1, "score": 100}
+      ]
+    }
+  ]
+}

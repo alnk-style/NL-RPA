@@ -1,0 +1,4 @@
+websockets>=12.0
+pywinauto>=0.6.8
+pywin32>=306
+Pillow>=10.0

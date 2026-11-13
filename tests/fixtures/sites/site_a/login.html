@@ -1,0 +1,21 @@
+<!doctype html>
+<html lang="en">
+<head><meta charset="utf-8"><title>Acceptance Login</title></head>
+<body>
+  <h1>Sign in</h1>
+  <form id="login">
+    <label>User <input id="username" name="username" autocomplete="off"></label>
+    <label>Password <input id="password" name="password" type="password"></label>
+    <button type="submit">Sign in</button>
+  </form>
+  <div id="authenticated" hidden>Authenticated</div>
+  <script>
+    document.querySelector('#login').addEventListener('submit', function (event) {
+      event.preventDefault();
+      document.cookie = 'acceptance_session=ready; path=/';
+      document.querySelector('#login').hidden = true;
+      document.querySelector('#authenticated').hidden = false;
+    });
+  </script>
+</body>
+</html>

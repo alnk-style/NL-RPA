@@ -1,0 +1,4 @@
+{
+  "execution_mode": "legacy_code",
+  "generated_code": "async def main(page):\n    await page.goto('https://example.com')\n"
+}

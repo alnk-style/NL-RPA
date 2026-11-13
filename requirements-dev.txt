@@ -1,0 +1,6 @@
+-r requirements.txt
+# 阶段 5 本地验证专用（不进入桌面打包）：
+# - embedded-postgres：Windows 本机内嵌 PostgreSQL 二进制
+# - fakeredis：Redis 队列契约测试（无外网/无 Redis 服务）
+embedded-postgres==18.6.3
+fakeredis==2.39.0

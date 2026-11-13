@@ -1,0 +1,14 @@
+{
+  "execution_mode": "legacy_code",
+  "executor_type": "windows",
+  "steps": [
+    {
+      "step_id": 1,
+      "executor": "windows",
+      "action": "fetch_kugou_lyrics",
+      "params": {
+        "query": "legacy fixture"
+      }
+    }
+  ]
+}

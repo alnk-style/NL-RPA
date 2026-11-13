@@ -1,0 +1,20 @@
+FROM python:3.11-slim
+
+ENV PLAYWRIGHT_BROWSERS_PATH=/ms-playwright
+
+RUN apt-get update && apt-get install -y wget gnupg
+
+RUN pip install --no-cache-dir playwright pandas
+
+RUN playwright install --with-deps chromium
+
+RUN groupadd -r rpauser && useradd -r -g rpauser -m rpauser
+
+RUN mkdir -p /workspace /ms-playwright \
+    && chown -R rpauser:rpauser /workspace /ms-playwright
+
+USER rpauser
+
+WORKDIR /workspace
+
+ENTRYPOINT ["python"]

@@ -1,0 +1,14 @@
+{
+  "execution_mode": "structured",
+  "executor_type": "web",
+  "steps": [
+    {
+      "step_id": 1,
+      "executor": "transform",
+      "action": "split_lines",
+      "params": {
+        "text": "first\\nsecond"
+      }
+    }
+  ]
+}

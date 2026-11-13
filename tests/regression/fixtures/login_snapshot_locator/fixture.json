@@ -1,0 +1,35 @@
+{
+  "name": "login_snapshot_locator",
+  "description": "登录页观察快照：候选定位在固定快照上的唯一性",
+  "observation": {
+    "snapshot": "snapshot.json",
+    "expected_locators": [
+      {
+        "spec": {"strategy": "label", "value": "用户名", "exact": true},
+        "expect": {"matched": 1, "unique": true, "strategy": "label"}
+      },
+      {
+        "spec": {
+          "strategy": "role",
+          "value": "button",
+          "name": "登录",
+          "exact": true
+        },
+        "expect": {"matched": 1, "unique": true, "strategy": "role"}
+      },
+      {
+        "spec": {"strategy": "testid", "value": "login-button"},
+        "expect": {"matched": 1, "unique": true, "strategy": "testid"}
+      },
+      {
+        "spec": {
+          "strategy": "role",
+          "value": "button",
+          "name": "退出",
+          "exact": true
+        },
+        "expect": {"matched": 0, "unique": false, "strategy": "role"}
+      }
+    ]
+  }
+}

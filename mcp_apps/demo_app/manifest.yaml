@@ -1,0 +1,60 @@
+schema_version: 1
+id: demo_app
+name: Demo App
+version: "0.1.0"
+description: A dependency-free application used to exercise App MCP.
+platform: cross_platform
+backend_priority:
+  - api
+  - cli
+  - desktop
+  - browser
+entrypoint: "adapter:DemoAppAdapter"
+config:
+  export_subdir: exports
+local:
+  default_port: 8767
+  auto_start: false
+  startup_timeout_seconds: 15
+  health_interval_seconds: 10
+tools:
+  - name: demo_status
+    description: Return the demo application and runtime status.
+    input_schema:
+      type: object
+      properties: {}
+      additionalProperties: false
+    risk_level: read_only
+    output_description: Installation, run state, version and runtime information.
+  - name: demo_execute
+    description: Execute a deterministic demo operation and echo its context.
+    input_schema:
+      type: object
+      properties:
+        value:
+          type: string
+          maxLength: 2000
+        note:
+          type: string
+          maxLength: 1000
+      required:
+        - value
+      additionalProperties: false
+    risk_level: mutating
+    output_description: Structured execution data including trusted call context.
+  - name: demo_export
+    description: Export a text result to the application export directory.
+    input_schema:
+      type: object
+      properties:
+        text:
+          type: string
+          maxLength: 100000
+        file_name:
+          type: string
+          maxLength: 80
+      required:
+        - text
+      additionalProperties: false
+    risk_level: mutating
+    output_description: File name, absolute path, size and content summary.

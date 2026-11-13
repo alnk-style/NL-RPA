@@ -1,0 +1,18 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Visual Fallback Acceptance</title>
+  <style>
+    body { font-family: sans-serif; margin: 40px; }
+    #target { position: absolute; left: 420px; top: 220px; width: 180px; height: 56px; }
+  </style>
+</head>
+<body>
+  <h1>Visual candidate</h1>
+  <p id="status">Waiting</p>
+  <button id="target" onclick="document.querySelector('#status').textContent='Visual action completed'">
+    Continue
+  </button>
+</body>
+</html>

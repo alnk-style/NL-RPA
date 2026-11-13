@@ -1,0 +1,40 @@
+services:
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    depends_on:
+      - redis
+    environment:
+      DATABASE_URL: sqlite+aiosqlite:///./rpa.db
+      REDIS_URL: redis://redis:6379/0
+    ports:
+      - "8000:8000"
+    env_file:
+      - .env
+    volumes:
+      - ./.env:/app/.env:ro
+      - logs_data:/app/logs
+    command: uvicorn app.main:app --host 0.0.0.0 --port 8000
+
+  redis:
+    image: redis:7-alpine
+    ports:
+      - "6379:6379"
+    volumes:
+      - redis_data:/data
+
+  frontend:
+    image: nginx:alpine
+    depends_on:
+      - app
+    ports:
+      - "5173:80"
+    volumes:
+      - ./frontend/dist:/usr/share/nginx/html:ro
+    environment:
+      VITE_API_BASE_URL: http://localhost:8000
+
+volumes:
+  redis_data:
+  logs_data:

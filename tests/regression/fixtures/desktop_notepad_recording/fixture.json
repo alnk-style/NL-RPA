@@ -1,0 +1,32 @@
+{
+  "name": "desktop_notepad_recording",
+  "description": "桌面记事本录制草稿：激活窗口、输入、保存快捷键",
+  "recording": {
+    "mode": "windows",
+    "events": [
+      {
+        "kind": "desktop_window",
+        "window": {"title": "记事本", "pid": 100}
+      },
+      {
+        "kind": "desktop_type",
+        "value": "hello",
+        "locators": [{"strategy": "testid", "value": "editor"}]
+      },
+      {
+        "kind": "desktop_hotkey",
+        "key": "Control+S"
+      }
+    ],
+    "expected_steps": [
+      {"action": "activate_window", "executor": "windows"},
+      {"action": "type_text", "executor": "windows"},
+      {"action": "press_hotkey", "executor": "windows"}
+    ],
+    "expected_idempotency_keys": [
+      "rec-01-activate_window-bc6a7b40",
+      "rec-02-type_text-6cb867dc",
+      "rec-03-press_hotkey-8da3194b"
+    ]
+  }
+}

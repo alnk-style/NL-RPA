@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Site A Table</title>
+  <style>
+    body { font-family: sans-serif; margin: 32px; }
+    table { border-collapse: collapse; }
+    th, td { border: 1px solid #bbb; padding: 8px 12px; }
+  </style>
+</head>
+<body>
+  <h1>Site A</h1>
+  <table id="records">
+    <tbody>
+      <tr class="record" data-url="/site_a/item/1">
+        <td class="name">Alpha</td><td class="amount">1200</td>
+      </tr>
+      <tr class="record" data-url="/site_a/item/2">
+        <td class="name">Beta</td><td class="amount">800</td>
+      </tr>
+    </tbody>
+  </table>
+  <button id="next" onclick="
+    document.querySelector('#records').insertAdjacentHTML('beforeend',
+      '<tr class=&quot;record&quot; data-url=&quot;/site_a/item/3&quot;><td class=&quot;name&quot;>Gamma</td><td class=&quot;amount&quot;>1500</td></tr>');
+    this.remove();
+  ">Next page</button>
+</body>
+</html>

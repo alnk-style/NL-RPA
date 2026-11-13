@@ -1,0 +1,59 @@
+{
+  "schema_version": 1,
+  "app_id": "kugou",
+  "display_name": "酷狗音乐",
+  "executable_path": "D:\\KGMusic\\KuGou.exe",
+  "window": {
+    "title": "酷狗音乐",
+    "class_name": "kugou_ui"
+  },
+  "recipes": {
+    "search_song": {
+      "verified": false,
+      "steps": [
+        {
+          "action": "click_element",
+          "name": "搜索",
+          "control_type": "Edit"
+        },
+        {
+          "action": "type_text",
+          "text": "${query}",
+          "clear_first": true,
+          "method": "clipboard"
+        },
+        {
+          "action": "press_hotkey",
+          "keys": "{ENTER}"
+        }
+      ]
+    },
+    "play_first_result": {
+      "verified": false,
+      "steps": [
+        {
+          "action": "wait",
+          "seconds": 0.8
+        },
+        {
+          "action": "press_hotkey",
+          "keys": "{ENTER}"
+        }
+      ]
+    },
+    "open_lyrics": {
+      "verified": false,
+      "steps": [
+        {
+          "action": "click_element",
+          "name": "查看歌词写真",
+          "control_type": "Button"
+        },
+        {
+          "action": "wait",
+          "seconds": 0.8
+        }
+      ]
+    }
+  }
+}

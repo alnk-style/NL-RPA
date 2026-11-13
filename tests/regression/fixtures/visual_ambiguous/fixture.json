@@ -1,0 +1,35 @@
+{
+  "name": "visual_ambiguous_two_candidates",
+  "step": {
+    "step_id": 4,
+    "executor": "web",
+    "action": "click",
+    "visual_fallback": true,
+    "params": {
+      "visual_fallback": true,
+      "target_description": "导出按钮"
+    }
+  },
+  "settings": {
+    "enabled": true,
+    "provider": "remote_vlm",
+    "confidence_threshold": 0.9,
+    "max_candidates": 3,
+    "max_attempts": 2
+  },
+  "candidates": [
+    {
+      "target": "导出",
+      "bbox": [100, 200, 180, 240],
+      "confidence": 0.96,
+      "evidence": "按钮文字"
+    },
+    {
+      "target": "导出全部",
+      "bbox": [100, 250, 180, 290],
+      "confidence": 0.95,
+      "evidence": "按钮文字"
+    }
+  ],
+  "expected_action": "confirm"
+}

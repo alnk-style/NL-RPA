@@ -1,0 +1,26 @@
+fastapi==0.115.12
+uvicorn[standard]==0.34.2
+SQLAlchemy==2.0.41
+aiosqlite==0.21.0
+playwright==1.52.0
+openai==1.82.0
+APScheduler==3.11.0
+python-jose[cryptography]==3.4.0
+passlib[bcrypt]==1.7.4
+python-multipart==0.0.20
+aiofiles==24.1.0
+docker==7.1.0
+pydantic-settings==2.9.1
+aiosmtplib==3.0.2
+httpx==0.28.1
+PyYAML==6.0.3
+jsonschema==4.26.0
+pywinauto==0.6.9; sys_platform == "win32"
+pywin32==312; sys_platform == "win32"
+Pillow==12.3.0; sys_platform == "win32"
+mcp==1.9.4
+# 阶段 5：PostgreSQL 驱动（DATABASE_URL=postgresql+asyncpg://...）
+asyncpg==0.31.0
+# 阶段 5：外部任务队列（EXTERNAL_QUEUE=true 且 QUEUE_BACKEND=redis）
+redis==8.1.0
+PyInstaller>=6.11
